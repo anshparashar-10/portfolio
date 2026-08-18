@@ -67,10 +67,7 @@ export default function Hero() {
 
           <motion.p variants={fade} initial="hidden" animate="show" custom={4}
             className="mt-5 max-w-lg leading-relaxed text-white/70">
-            I'm a Software Engineer at Tata Consultancy Services building full-stack
-            applications and microservices-based systems. I work mostly in Java and
-            Spring Boot, tuning back-ends to cut latency and speed up data retrieval,
-            and I enjoy the problems that live underneath the interface.
+            Your friendly neighbourhood software engineer. I swing between the front end and the back end, and I usually stick the landing. Worked mostly on Java, React, Spring Boot, NodeJs and SQL, with a growing habit of pointing LLMs at problems that used to need a human.
           </motion.p>
 
           <motion.div variants={fade} initial="hidden" animate="show" custom={5} className="mt-7">
