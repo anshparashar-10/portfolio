@@ -5,8 +5,20 @@ import SectionHeading from '../SectionHeading'
 
 const PROJECTS = [
   {
-    id: 'docscanner',
+    id: 'jev',
     n: '01',
+    name: 'YOUTUBE COMMENT TRIAGE',
+    status: 'DEPLOYED',
+    tagline: 'Structured comment classification',
+    desc: 'Classifies every comment on a YouTube video across four axes: type, reply-worthiness, sentiment, and question difficulty. Built on Jev, a structured-decision model that returns typed labels and probabilities rather than text, so no output parsing is needed. Async per-comment calls rank the handful worth answering above the noise.',
+    tech: ['Python', 'asyncio', 'httpx', 'YouTube Data API', 'Jev API', 'Streamlit'],
+    
+    live: 'https://jev-yt-cmnt-triage.streamlit.app/',
+    code: 'https://github.com/anshparashar-10/JEV-YT-CMNT-TRIAGE',
+  },
+  {
+    id: 'docscanner',
+    n: '02',
     name: 'DOCSCANNER AI',
     status: 'ACTIVE',
     tagline: 'Intelligent document screening',
@@ -17,7 +29,7 @@ const PROJECTS = [
   },
   {
     id: 'flight',
-    n: '02',
+    n: '03',
     name: 'FLIGHT BOOKING AI',
     status: 'STABLE',
     tagline: 'Natural-language flight search',
@@ -25,18 +37,7 @@ const PROJECTS = [
     tech: ['React', 'Node.js', 'Express', 'Flask', 'OpenAI', 'RapidAPI'],
     
     code: 'https://github.com/anshparashar-10/Flight_Booking_AI',
-  },
-  {
-    id: 'risk',
-    n: '03',
-    name: 'RISK ANALYSIS TOOL',
-    status: 'DEPLOYED',
-    tagline: 'Carbon risk assessment',
-    desc: 'Replaced manual spreadsheet review for carbon credit risk assessment. Built with Next.js and PostgreSQL, it cut assessment turnaround by a quarter and removed the transcription errors that came with the old process.',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Node.js'],
-    
-    code: 'https://github.com/anshparashar-10',
-  },
+  }
 ]
 
 function ViewToggle({ view, setView }) {
@@ -79,7 +80,12 @@ function ViewToggle({ view, setView }) {
 function Links({ p }) {
   return (
     <div className="flex shrink-0 flex-col gap-2 text-xs">
-      
+      {p.live && (
+        <a href={p.live} target="_blank" rel="noreferrer"
+          className="flex items-center gap-1.5 text-white/55 transition-colors hover:text-glow-cyan">
+          <ExternalLink size={13} /> LIVE
+        </a>
+      )}
       <a href={p.code} target="_blank" rel="noreferrer"
         className="flex items-center gap-1.5 text-white/55 transition-colors hover:text-glow-cyan">
         <Code2 size={13} /> GITHUB
